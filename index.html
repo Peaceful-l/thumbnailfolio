@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,15 +9,6 @@
 
 <title>Bhanu | Thumbnail Designer</title>
 
-<meta name="description" content="Affordable YouTube Thumbnail Designer. Professional thumbnails for creators who want more clicks and more attention.">
-
-<meta name="keywords" content="Thumbnail Designer, YouTube Thumbnail Designer, Thumbnail Portfolio, YouTube Graphics">
-
-<meta name="theme-color" content="#050505">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -24,16 +16,13 @@
 :root{
 
 --bg:#050505;
---card:#0d0d0d;
+--card:#101010;
 
 --cyan:#00e5ff;
---purple:#7c3aed;
 --pink:#ff007f;
---green:#39ff14;
+--purple:#7c3aed;
 
---white:#ffffff;
 --text:#b8b8b8;
-
 --border:rgba(255,255,255,.08);
 
 }
@@ -42,34 +31,29 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
+font-family:'Inter',sans-serif;
 }
 
 html{
-overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 body{
 
-font-family:'Inter',sans-serif;
-
 background:var(--bg);
-
 color:white;
-
 overflow-x:hidden;
 
 }
 
-/* ========================= */
 /* BACKGROUND */
-/* ========================= */
 
 .bg-grid{
 
 position:fixed;
 
-inset:-50%;
+top:-50%;
+left:-50%;
 
 width:200%;
 height:200%;
@@ -82,19 +66,19 @@ background-size:60px 60px;
 
 transform:rotate(-12deg);
 
-animation:gridMove 8s linear infinite;
+animation:gridMove 10s linear infinite;
 
-z-index:-5;
+z-index:-10;
 
 }
 
 @keyframes gridMove{
 
-0%{
+from{
 background-position:0 0;
 }
 
-100%{
+to{
 background-position:60px 60px;
 }
 
@@ -104,45 +88,40 @@ background-position:60px 60px;
 
 position:fixed;
 
+width:500px;
+height:500px;
+
 border-radius:50%;
 
 filter:blur(140px);
 
-opacity:.18;
+opacity:.15;
 
 pointer-events:none;
 
-z-index:-4;
+z-index:-9;
 
 }
 
 .orb1{
 
-width:550px;
-height:550px;
+background:#ff007f;
 
-background:var(--pink);
-
-top:-180px;
-left:-180px;
+top:-150px;
+left:-150px;
 
 }
 
 .orb2{
 
-width:550px;
-height:550px;
+background:#00e5ff;
 
-background:var(--cyan);
-
-right:-180px;
-bottom:-180px;
+right:-150px;
+bottom:-150px;
 
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
 
 header{
 
@@ -161,11 +140,11 @@ justify-content:space-between;
 
 align-items:center;
 
-backdrop-filter:blur(18px);
-
 background:rgba(5,5,5,.7);
 
-border-bottom:1px solid rgba(255,255,255,.04);
+backdrop-filter:blur(16px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
 
 z-index:999;
 
@@ -187,41 +166,15 @@ color:var(--cyan);
 
 }
 
-.nav{
-
-display:flex;
-
-align-items:center;
-
-gap:20px;
-
-}
-
-.nav a{
-
-color:#d5d5d5;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.nav a:hover{
-
-color:var(--cyan);
-
-}
-
-.order-btn{
+.header-btn{
 
 padding:12px 22px;
 
 border-radius:999px;
 
 text-decoration:none;
+
+color:white;
 
 font-weight:700;
 
@@ -231,40 +184,23 @@ var(--pink),
 var(--purple)
 );
 
-color:white;
-
-box-shadow:
-0 0 25px rgba(255,0,127,.3);
-
-transition:.3s;
-
 }
 
-.order-btn:hover{
-
-transform:translateY(-3px);
-
-}
-
-/* ========================= */
 /* HERO */
-/* ========================= */
 
 .hero{
 
 min-height:100vh;
 
-padding-top:130px;
-
 display:flex;
 
 align-items:center;
 
+padding-top:120px;
+
 }
 
 .container{
-
-width:100%;
 
 max-width:1400px;
 
@@ -288,33 +224,33 @@ align-items:center;
 
 .hero-badge{
 
-display:inline-flex;
+display:inline-block;
 
 padding:10px 18px;
 
 border-radius:999px;
 
-border:1px solid rgba(255,255,255,.08);
-
 background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
 
 color:var(--cyan);
 
 font-weight:700;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
 .hero h1{
 
-font-size:clamp(3.2rem,8vw,6.5rem);
+font-size:clamp(3rem,8vw,6rem);
 
 line-height:.95;
 
-font-weight:900;
-
 margin-bottom:20px;
+
+font-weight:900;
 
 }
 
@@ -341,7 +277,7 @@ color:var(--text);
 
 max-width:650px;
 
-margin-bottom:35px;
+margin-bottom:30px;
 
 }
 
@@ -349,7 +285,7 @@ margin-bottom:35px;
 
 display:flex;
 
-gap:18px;
+gap:15px;
 
 flex-wrap:wrap;
 
@@ -383,15 +319,13 @@ border-radius:14px;
 
 border:1px solid rgba(255,255,255,.08);
 
-text-decoration:none;
-
 color:white;
+
+text-decoration:none;
 
 }
 
-/* ========================= */
 /* HERO THUMBNAILS */
-/* ========================= */
 
 .hero-thumbs{
 
@@ -405,15 +339,11 @@ gap:18px;
 
 .hero-thumb{
 
-position:relative;
-
 overflow:hidden;
 
-border-radius:24px;
+border-radius:22px;
 
 border:1px solid rgba(255,255,255,.08);
-
-background:#111;
 
 }
 
@@ -423,43 +353,9 @@ width:100%;
 
 display:block;
 
-transition:.4s;
-
 }
 
-.hero-thumb:hover img{
-
-transform:scale(1.04);
-
-}
-
-.thumb-label{
-
-position:absolute;
-
-bottom:15px;
-
-left:15px;
-
-padding:8px 14px;
-
-background:black;
-
-border:1px solid var(--cyan);
-
-border-radius:999px;
-
-font-size:.8rem;
-
-font-weight:700;
-
-color:var(--cyan);
-
-}
-
-/* ========================= */
 /* TRUST BAR */
-/* ========================= */
 
 .trust-bar{
 
@@ -477,13 +373,13 @@ gap:15px;
 
 padding:20px;
 
+text-align:center;
+
 border-radius:18px;
 
 background:rgba(255,255,255,.03);
 
 border:1px solid rgba(255,255,255,.06);
-
-text-align:center;
 
 }
 
@@ -491,17 +387,11 @@ text-align:center;
 
 display:block;
 
-font-size:1.1rem;
-
 margin-bottom:6px;
 
 color:var(--cyan);
 
 }
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
 
 @media(max-width:1000px){
 
@@ -517,16 +407,9 @@ text-align:center;
 
 }
 
-.hero p{
+.hero-thumbs{
 
-margin-left:auto;
-margin-right:auto;
-
-}
-
-.hero-buttons{
-
-justify-content:center;
+grid-template-columns:1fr;
 
 }
 
@@ -539,24 +422,6 @@ grid-template-columns:1fr 1fr;
 }
 
 @media(max-width:700px){
-
-header{
-
-padding:18px;
-
-}
-
-.nav{
-
-display:none;
-
-}
-
-.hero-thumbs{
-
-grid-template-columns:1fr;
-
-}
 
 .trust-bar{
 
@@ -585,23 +450,13 @@ BHANU<span>.</span>
 
 </div>
 
-<div class="nav">
-
-<a href="#portfolio">Portfolio</a>
-
-<a href="#pricing">Pricing</a>
-
-<a href="#contact">Contact</a>
-
 <a href="https://ig.me/m/iambhanu8x"
-class="order-btn"
-target="_blank">
+target="_blank"
+class="header-btn">
 
 DM @iambhanu8x
 
 </a>
-
-</div>
 
 </header>
 
@@ -628,14 +483,11 @@ Stop The Scroll.
 
 <p>
 
-I create YouTube thumbnails designed
-to grab attention instantly.
+I create YouTube thumbnails designed to grab attention instantly.
 
 Affordable pricing.
 Fast delivery.
 Direct communication.
-
-Built for creators who want more clicks.
 
 </p>
 
@@ -652,7 +504,7 @@ View Portfolio
 target="_blank"
 class="secondary-btn">
 
-Order A Thumbnail
+Order Now
 
 </a>
 
@@ -662,29 +514,11 @@ Order A Thumbnail
 
 <div class="hero-thumbs">
 
-<div class="hero-thumb">
+<!-- HERO IMAGE 1 -->
+<img src="PASTE_RONALDO_URL_HERE">
 
-<img src="PUT_RONALDO_IMAGE_URL_HERE">
-
-<div class="thumb-label">
-
-RONALDO
-
-</div>
-
-</div>
-
-<div class="hero-thumb">
-
-<img src="PUT_VIRAT_IMAGE_URL_HERE">
-
-<div class="thumb-label">
-
-VIRAT KOHLI
-
-</div>
-
-</div>
+<!-- HERO IMAGE 2 -->
+<img src="PASTE_VIRAT_URL_HERE">
 
 </div>
 
@@ -693,22 +527,23 @@ VIRAT KOHLI
 <div class="trust-bar">
 
 <div class="trust-box">
-<strong>₹100–150</strong>
+<strong>₹100-150</strong>
 Affordable Pricing
 </div>
 
 <div class="trust-box">
 <strong>24 Hours</strong>
-Delivery Time
+Fast Delivery
 </div>
 
 <div class="trust-box">
-<strong>Free Trial</strong>
-First Thumbnail
+<strong>Trial</strong>
+First Thumbnail Free
 </div>
 
 <div class="trust-box">
 <strong>Direct DM</strong>
+No Middleman
 </div>
 
 </div>
@@ -716,8 +551,10 @@ First Thumbnail
 </div>
 
 </section>
+```
+```html
 <!-- ====================================== -->
-<!-- PORTFOLIO SECTION -->
+<!-- PORTFOLIO -->
 <!-- ====================================== -->
 
 <section id="portfolio">
@@ -727,178 +564,79 @@ First Thumbnail
 <div class="section-title">
 
 <span class="section-badge">
-MY WORK
+SELECTED WORK
 </span>
 
 <h2>
-Thumbnail Portfolio
+My Thumbnail Portfolio
 </h2>
 
 <p>
-A collection of thumbnails designed to stop scrolling,
-increase curiosity and improve click-through rate.
+A collection of custom YouTube thumbnails.
 </p>
 
 </div>
 
 <div class="portfolio-grid">
 
-<!-- RONALDO -->
-
-<div class="portfolio-card featured">
-
-<img src="PUT_RONALDO_IMAGE_URL_HERE">
-
-<div class="portfolio-info">
-
-<h3>
-Ronaldo Transformation
-</h3>
-
-<span>
-Storytelling Thumbnail
-</span>
-
-</div>
-
-</div>
-
-<!-- VIRAT -->
-
-<div class="portfolio-card featured">
-
-<img src="PUT_VIRAT_IMAGE_URL_HERE">
-
-<div class="portfolio-info">
-
-<h3>
-Virat Kohli GOAT
-</h3>
-
-<span>
-Cricket Thumbnail
-</span>
-
-</div>
-
-</div>
-
-<!-- PABLO -->
-
+<!-- THUMBNAIL 1 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/pjGFb32T/fdf59d79366f8e53b93ba7f7677cd0ce.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-Pablo Escobar
-</h3>
-
-<span>
-Documentary Thumbnail
-</span>
-
+<img src="PASTE_THUMBNAIL_1_URL_HERE">
 </div>
 
-</div>
-
-<!-- SELF DOUBT -->
-
+<!-- THUMBNAIL 2 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/4wrTQD8Y/aecc25cc749c34c19442b03db5a3b9c2.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-Self Doubt
-</h3>
-
-<span>
-Self Improvement
-</span>
-
+<img src="PASTE_THUMBNAIL_2_URL_HERE">
 </div>
 
-</div>
-
-<!-- SOCIAL MEDIA -->
-
+<!-- THUMBNAIL 3 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/G480XRcr/8cf2d8c017243f5c040f51da91b92022.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-Social Media
-</h3>
-
-<span>
-Psychology Thumbnail
-</span>
-
+<img src="PASTE_THUMBNAIL_3_URL_HERE">
 </div>
 
-</div>
-
-<!-- SHORT VIDEO EDITOR -->
-
+<!-- THUMBNAIL 4 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/LdFF8SHr/14569e87ec61f94f8d123ae45fb33231.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-Short Video Editor
-</h3>
-
-<span>
-Creator Thumbnail
-</span>
-
+<img src="PASTE_THUMBNAIL_4_URL_HERE">
 </div>
 
-</div>
-
-<!-- REMAINING -->
-
+<!-- THUMBNAIL 5 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/20tTgggB/38977b573fea846fccfb661cb42c4b49.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-Finance Content
-</h3>
-
-<span>
-Business Thumbnail
-</span>
-
+<img src="PASTE_THUMBNAIL_5_URL_HERE">
 </div>
 
-</div>
-
+<!-- THUMBNAIL 6 -->
 <div class="portfolio-card">
-
-<img src="https://i.ibb.co/VYMZqr5Q/e21a7e0d0341da88b236c43e950b37ac.jpg">
-
-<div class="portfolio-info">
-
-<h3>
-LinkedIn Growth
-</h3>
-
-<span>
-Professional Content
-</span>
-
+<img src="PASTE_THUMBNAIL_6_URL_HERE">
 </div>
 
+<!-- THUMBNAIL 7 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_7_URL_HERE">
+</div>
+
+<!-- THUMBNAIL 8 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_8_URL_HERE">
+</div>
+
+<!-- THUMBNAIL 9 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_9_URL_HERE">
+</div>
+
+<!-- THUMBNAIL 10 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_10_URL_HERE">
+</div>
+
+<!-- THUMBNAIL 11 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_11_URL_HERE">
+</div>
+
+<!-- THUMBNAIL 12 -->
+<div class="portfolio-card">
+<img src="PASTE_THUMBNAIL_12_URL_HERE">
 </div>
 
 </div>
@@ -911,14 +649,14 @@ Professional Content
 <!-- WHY WORK WITH ME -->
 <!-- ====================================== -->
 
-<section class="why-section">
+<section>
 
 <div class="container">
 
 <div class="section-title">
 
 <span class="section-badge">
-WHY CHOOSE ME
+WHY WORK WITH ME
 </span>
 
 <h2>
@@ -927,11 +665,11 @@ Simple. Fast. Affordable.
 
 </div>
 
-<div class="why-grid">
+<div class="feature-grid">
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="why-icon">
+<div class="feature-icon">
 ⚡
 </div>
 
@@ -940,32 +678,30 @@ Fast Delivery
 </h3>
 
 <p>
-Most thumbnails are delivered within 24 hours.
-Perfect for active creators.
+Most thumbnails delivered within 24 hours.
 </p>
 
 </div>
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="why-icon">
+<div class="feature-icon">
 🎯
 </div>
 
 <h3>
-Built For Clicks
+Attention Focused
 </h3>
 
 <p>
-Designed with curiosity, contrast and readability
-in mind.
+Designed to make viewers stop scrolling.
 </p>
 
 </div>
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="why-icon">
+<div class="feature-icon">
 💰
 </div>
 
@@ -974,15 +710,14 @@ Affordable
 </h3>
 
 <p>
-Professional-looking thumbnails without premium
-agency pricing.
+Professional thumbnails without expensive agency pricing.
 </p>
 
 </div>
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="why-icon">
+<div class="feature-icon">
 🤝
 </div>
 
@@ -991,9 +726,7 @@ Direct Communication
 </h3>
 
 <p>
-You work directly with me.
-No middleman.
-No confusion.
+Talk directly with me through Instagram.
 </p>
 
 </div>
@@ -1039,22 +772,15 @@ Standard Thumbnail
 <ul>
 
 <li>Custom Design</li>
-
 <li>High Resolution</li>
-
 <li>Fast Delivery</li>
-
 <li>Creator Focused</li>
 
 </ul>
 
 </div>
 
-<div class="price-card featured-price">
-
-<div class="popular-tag">
-POPULAR
-</div>
+<div class="price-card premium">
 
 <h3>
 ₹150
@@ -1067,13 +793,8 @@ Premium Thumbnail
 <ul>
 
 <li>Advanced Effects</li>
-
-<li>Better Visual Hierarchy</li>
-
 <li>Premium Styling</li>
-
 <li>Priority Delivery</li>
-
 <li>Revision Included</li>
 
 </ul>
@@ -1089,7 +810,7 @@ Premium Thumbnail
 <style>
 
 /* ====================== */
-/* SECTION TITLES */
+/* SECTION TITLE */
 /* ====================== */
 
 .section-title{
@@ -1112,12 +833,6 @@ margin-bottom:15px;
 
 color:#bcbcbc;
 
-max-width:700px;
-
-margin:auto;
-
-line-height:1.8;
-
 }
 
 .section-badge{
@@ -1128,9 +843,9 @@ padding:10px 18px;
 
 border-radius:999px;
 
-border:1px solid rgba(255,255,255,.08);
-
 background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
 
 color:var(--cyan);
 
@@ -1148,15 +863,13 @@ margin-bottom:20px;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
-gap:30px;
+gap:25px;
 
 }
 
 .portfolio-card{
-
-position:relative;
 
 overflow:hidden;
 
@@ -1164,9 +877,15 @@ border-radius:22px;
 
 border:1px solid rgba(255,255,255,.08);
 
-background:#111;
+transition:.3s;
 
-cursor:pointer;
+}
+
+.portfolio-card:hover{
+
+transform:translateY(-6px);
+
+border-color:var(--cyan);
 
 }
 
@@ -1174,57 +893,25 @@ cursor:pointer;
 
 width:100%;
 
-transition:.5s;
-
-}
-
-.portfolio-card:hover img{
-
-transform:scale(1.05);
-
-}
-
-.portfolio-info{
-
-padding:20px;
-
-}
-
-.portfolio-info h3{
-
-margin-bottom:8px;
-
-}
-
-.portfolio-info span{
-
-color:var(--cyan);
-
-font-size:.9rem;
-
-}
-
-.featured{
-
-border:1px solid rgba(0,229,255,.35);
+display:block;
 
 }
 
 /* ====================== */
-/* WHY SECTION */
+/* FEATURES */
 /* ====================== */
 
-.why-grid{
+.feature-grid{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
 gap:25px;
 
 }
 
-.why-card{
+.feature-card{
 
 padding:35px;
 
@@ -1234,19 +921,9 @@ background:rgba(255,255,255,.03);
 
 border:1px solid rgba(255,255,255,.08);
 
-transition:.3s;
-
 }
 
-.why-card:hover{
-
-transform:translateY(-8px);
-
-border-color:var(--cyan);
-
-}
-
-.why-icon{
+.feature-icon{
 
 font-size:2rem;
 
@@ -1276,13 +953,11 @@ margin:auto;
 
 padding:40px;
 
-background:rgba(255,255,255,.03);
-
 border-radius:24px;
 
-border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
 
-position:relative;
+border:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -1296,7 +971,7 @@ margin-bottom:15px;
 
 .price-card ul{
 
-margin-top:25px;
+margin-top:20px;
 
 display:flex;
 
@@ -1308,39 +983,13 @@ list-style:none;
 
 }
 
-.featured-price{
+.premium{
 
 border-color:var(--cyan);
 
 box-shadow:0 0 40px rgba(0,229,255,.12);
 
 }
-
-.popular-tag{
-
-position:absolute;
-
-top:18px;
-
-right:18px;
-
-padding:6px 12px;
-
-background:var(--cyan);
-
-color:black;
-
-font-weight:800;
-
-border-radius:999px;
-
-font-size:.75rem;
-
-}
-
-/* ====================== */
-/* MOBILE */
-/* ====================== */
 
 @media(max-width:900px){
 
@@ -1359,87 +1008,8 @@ font-size:2.2rem;
 }
 
 </style>
-<!-- ====================================== -->
-<!-- WORK PROCESS -->
-<!-- ====================================== -->
-
-<section id="process">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="section-badge">
-PROCESS
-</span>
-
-<h2>
-How It Works
-</h2>
-
-<p>
-Simple process. No forms. No complicated onboarding.
-Just send a DM and let's get started.
-</p>
-
-</div>
-
-<div class="process-grid">
-
-<div class="process-card">
-
-<div class="step-number">
-01
-</div>
-
-<h3>
-Send Details
-</h3>
-
-<p>
-Send your video title, idea or script through Instagram.
-</p>
-
-</div>
-
-<div class="process-card">
-
-<div class="step-number">
-02
-</div>
-
-<h3>
-Thumbnail Creation
-</h3>
-
-<p>
-I create a custom thumbnail designed to maximize attention.
-</p>
-
-</div>
-
-<div class="process-card">
-
-<div class="step-number">
-03
-</div>
-
-<h3>
-Delivery
-</h3>
-
-<p>
-Receive your thumbnail and start publishing.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+```
+```html
 <!-- ====================================== -->
 <!-- FAQ -->
 <!-- ====================================== -->
@@ -1469,8 +1039,8 @@ How long does delivery take?
 </h3>
 
 <p>
-Usually within 24 hours.
-Sometimes much faster.
+Most thumbnails are delivered within 24 hours.
+Sometimes even faster depending on workload.
 </p>
 
 </div>
@@ -1478,11 +1048,12 @@ Sometimes much faster.
 <div class="faq-card">
 
 <h3>
-Do you offer a free trial?
+Do you offer a trial thumbnail?
 </h3>
 
 <p>
-Yes. One trial thumbnail can be created before paid work.
+Yes.
+One trial thumbnail can be created before starting paid work.
 </p>
 
 </div>
@@ -1490,11 +1061,12 @@ Yes. One trial thumbnail can be created before paid work.
 <div class="faq-card">
 
 <h3>
-What niches do you work in?
+What type of thumbnails do you make?
 </h3>
 
 <p>
-Gaming, Cricket, Finance, Self Improvement, Storytelling and Creator Content.
+Gaming, Cricket, Storytelling, Finance,
+Self Improvement and Creator Content.
 </p>
 
 </div>
@@ -1502,11 +1074,12 @@ Gaming, Cricket, Finance, Self Improvement, Storytelling and Creator Content.
 <div class="faq-card">
 
 <h3>
-How do I order?
+How do I place an order?
 </h3>
 
 <p>
-Simply DM @iambhanu8x on Instagram.
+Just DM me on Instagram and send your video title,
+idea or script.
 </p>
 
 </div>
@@ -1525,10 +1098,10 @@ Simply DM @iambhanu8x on Instagram.
 
 <div class="container">
 
-<div class="final-cta">
+<div class="cta-box">
 
 <h2>
-Need A Thumbnail?
+Ready To Upgrade Your Thumbnails?
 </h2>
 
 <p>
@@ -1537,7 +1110,7 @@ Let's create something people can't ignore.
 
 <a href="https://ig.me/m/iambhanu8x"
 target="_blank"
-class="cta-button">
+class="cta-btn">
 
 DM @iambhanu8x
 
@@ -1557,22 +1130,36 @@ DM @iambhanu8x
 
 <div class="container">
 
-<div class="contact-card">
+<div class="contact-box">
 
 <h2>
 Let's Work Together
 </h2>
 
 <p>
-Fastest response on Instagram.
-Feel free to send your idea anytime.
+
+Fastest response through Instagram.
+
+Available for:
+<br><br>
+
+✓ YouTube Thumbnails
+<br>
+✓ Creator Content
+<br>
+✓ Gaming Content
+<br>
+✓ Cricket Content
+<br>
+✓ Storytelling Videos
+
 </p>
 
 <a href="https://ig.me/m/iambhanu8x"
 target="_blank"
-class="big-contact-btn">
+class="contact-btn">
 
-Message Me On Instagram
+Message Me
 
 </a>
 
@@ -1601,7 +1188,7 @@ Thumbnail Designer
 <div class="footer-line"></div>
 
 <span>
-Built with ❤️ by Bhanu
+© 2026 Bhanu. All Rights Reserved.
 </span>
 
 </div>
@@ -1614,53 +1201,15 @@ Built with ❤️ by Bhanu
 
 <a href="https://ig.me/m/iambhanu8x"
 target="_blank"
-class="floating-order">
+class="floating-btn">
 
-⚡ Order Now
+⚡ Order
 
 </a>
 
 <style>
 
-/* ====================== */
-/* PROCESS */
-/* ====================== */
-
-.process-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-
-}
-
-.process-card{
-
-padding:35px;
-
-background:rgba(255,255,255,.03);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:22px;
-
-}
-
-.step-number{
-
-font-size:3rem;
-
-font-weight:900;
-
-color:var(--cyan);
-
-margin-bottom:15px;
-
-}
-
-/* ====================== */
 /* FAQ */
-/* ====================== */
 
 .faq-grid{
 
@@ -1692,60 +1241,60 @@ margin-bottom:15px;
 
 .faq-card p{
 
-color:#bcbcbc;
-
 line-height:1.8;
+
+color:#bcbcbc;
 
 }
 
-/* ====================== */
-/* FINAL CTA */
-/* ====================== */
+/* CTA */
 
-.final-cta{
+.cta-box{
 
 padding:80px 40px;
 
-border-radius:30px;
-
 text-align:center;
+
+border-radius:30px;
 
 background:
 linear-gradient(
 135deg,
-rgba(0,229,255,.1),
-rgba(255,0,127,.1)
+rgba(0,229,255,.08),
+rgba(255,0,127,.08)
 );
 
 border:1px solid rgba(255,255,255,.08);
 
 }
 
-.final-cta h2{
+.cta-box h2{
 
-font-size:4rem;
+font-size:3.5rem;
 
 margin-bottom:15px;
 
 }
 
-.final-cta p{
-
-font-size:1.1rem;
-
-margin-bottom:35px;
+.cta-box p{
 
 color:#bcbcbc;
 
+margin-bottom:30px;
+
 }
 
-.cta-button{
+.cta-btn{
 
 display:inline-block;
 
-padding:18px 32px;
+padding:18px 34px;
 
 border-radius:999px;
+
+text-decoration:none;
+
+font-weight:800;
 
 background:
 linear-gradient(
@@ -1756,68 +1305,57 @@ var(--purple)
 
 color:white;
 
-font-weight:800;
-
-text-decoration:none;
-
-box-shadow:
-0 0 35px rgba(255,0,127,.35);
-
-transition:.3s;
-
 }
 
-.cta-button:hover{
-
-transform:translateY(-4px);
-
-}
-
-/* ====================== */
 /* CONTACT */
-/* ====================== */
 
-.contact-card{
+.contact-box{
 
 padding:80px 40px;
 
 text-align:center;
 
-border-radius:30px;
-
 background:rgba(255,255,255,.03);
+
+border-radius:30px;
 
 border:1px solid rgba(255,255,255,.08);
 
 }
 
-.contact-card h2{
+.contact-box h2{
 
 font-size:3rem;
 
-margin-bottom:15px;
+margin-bottom:20px;
 
 }
 
-.contact-card p{
+.contact-box p{
 
 max-width:700px;
 
 margin:auto;
 
-margin-bottom:30px;
+line-height:2;
 
 color:#bcbcbc;
 
+margin-bottom:30px;
+
 }
 
-.big-contact-btn{
+.contact-btn{
 
 display:inline-block;
 
-padding:20px 35px;
+padding:18px 30px;
 
 border-radius:14px;
+
+text-decoration:none;
+
+font-weight:800;
 
 background:
 linear-gradient(
@@ -1828,19 +1366,13 @@ var(--cyan),
 
 color:black;
 
-font-weight:900;
-
-text-decoration:none;
-
 }
 
-/* ====================== */
 /* FOOTER */
-/* ====================== */
 
 footer{
 
-padding:80px 20px;
+padding:70px 20px;
 
 text-align:center;
 
@@ -1858,9 +1390,9 @@ margin-bottom:10px;
 
 .footer-content p{
 
-color:#bcbcbc;
-
 margin-bottom:20px;
+
+color:#bcbcbc;
 
 }
 
@@ -1878,11 +1410,9 @@ margin-bottom:20px;
 
 }
 
-/* ====================== */
 /* FLOATING BUTTON */
-/* ====================== */
 
-.floating-order{
+.floating-btn{
 
 position:fixed;
 
@@ -1890,9 +1420,13 @@ right:25px;
 
 bottom:25px;
 
-padding:16px 24px;
+padding:15px 24px;
 
 border-radius:999px;
+
+text-decoration:none;
+
+font-weight:800;
 
 background:
 linear-gradient(
@@ -1902,10 +1436,6 @@ var(--purple)
 );
 
 color:white;
-
-font-weight:800;
-
-text-decoration:none;
 
 z-index:9999;
 
@@ -1919,26 +1449,22 @@ animation:pulse 2s infinite;
 @keyframes pulse{
 
 0%,100%{
+
 transform:scale(1);
+
 }
 
 50%{
+
 transform:scale(1.05);
-}
 
 }
 
-/* ====================== */
+}
+
 /* MOBILE */
-/* ====================== */
 
 @media(max-width:900px){
-
-.process-grid{
-
-grid-template-columns:1fr;
-
-}
 
 .faq-grid{
 
@@ -1946,18 +1472,22 @@ grid-template-columns:1fr;
 
 }
 
-.final-cta h2{
+.cta-box h2{
 
-font-size:2.5rem;
+font-size:2.3rem;
 
 }
 
-.contact-card h2{
+.contact-box h2{
 
-font-size:2.3rem;
+font-size:2.2rem;
 
 }
 
 }
 
 </style>
+
+</body>
+</html>
+```
