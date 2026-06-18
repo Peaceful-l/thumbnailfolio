@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ THUMBNAIL DESIGN PORTFOLIO ⚡</title>
+    <style>
+        :root {
+            --bg: #030303;
+            --neon-magenta: #ff007f;
+            --neon-cyan: #00f0ff;
+            --neon-green: #39ff14;
+            --grid-color: rgba(0, 240, 255, 0.08);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: #fff; overflow-x: hidden; position: relative; min-height: 100vh; }
+        
+        /* MOVING BACKGROUND EFFECT */
+        .bg-matrix {
+            position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: rotate(-12deg);
+            animation: matrixShift 2s linear infinite;
+            z-index: -2;
+            pointer-events: none;
+        }
+        @keyframes matrixShift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* GLOWING AMBIENT BACKGROUND ORBS */
+        .orb {
+            position: fixed; width: 450px; height: 450px; border-radius: 50%;
+            filter: blur(140px); opacity: 0.25; z-index: -1; pointer-events: none;
+        }
+        .orb-1 { top: -10%; left: -10%; background: var(--neon-magenta); animation: float1 12s infinite ease-in-out; }
+        .orb-2 { bottom: -10%; right: -10%; background: var(--neon-cyan); animation: float2 12s infinite ease-in-out alternate; }
+        @keyframes float1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, 60px) scale(1.2); } }
+        @keyframes float2 { 0%, 100% { transform: translate(0, 0) scale(1.1); } 50% { transform: translate(-50px, -40px) scale(0.9); } }
+
+        /* HEADER STRIP WITH THE CORNER CTA LINK */
+        header { width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 5; background: rgba(3,3,3,0.7); backdrop-filter: blur(10px); }
+        .logo-hub { font-weight: 900; letter-spacing: 2px; font-size: 1.1rem; color: #fff; }
+        .logo-hub span { color: var(--neon-cyan); }
+        
+        /* TOP RIGHT CORNER LINK STYLE */
+        .corner-cta-box {
+            text-decoration: none;
+            background: rgba(255, 0, 127, 0.1); 
+            border: 1px solid var(--neon-magenta); 
+            padding: 8px 16px; 
+            border-radius: 6px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            color: #fff;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+            animation: cornerPulse 2s infinite linear;
+        }
+        .corner-cta-box span { color: var(--neon-cyan); }
+        .corner-cta-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px var(--neon-magenta);
+            background: rgba(255, 0, 127, 0.2);
+        }
+        @keyframes cornerPulse {
+            0%, 100% { border-color: var(--neon-magenta); }
+            50% { border-color: var(--neon-cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.2); }
+        }
+
+        /* MAIN CONTENT LAYOUT WRAPPER */
+        .wrapper { max-width: 1400px; margin: 0 auto; padding: 25px; display: flex; flex-direction: column; gap: 40px; position: relative; z-index: 2; }
+
+        /* HERO DESIGN BLOCK */
+        .hero-block {
+            position: relative; width: 100%; border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(8, 8, 12, 0.6); backdrop-filter: blur(15px);
+            padding: 35px 20px; border-radius: 12px; overflow: hidden; text-align: center;
+        }
+        
+        /* MOVING TEXT ANIMATION FILLED CLEANLY */
+        .kinetic-title {
+            font-size: 3.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; line-height: 0.95;
+            background: linear-gradient(180deg, #fff 30%, #a5a5a5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .kinetic-title span { display: inline-block; animation: textWave 3s infinite ease-in-out; }
+        .kinetic-title span:nth-child(2) { animation-delay: 0.2s; }
+        @keyframes textWave { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); filter: drop-shadow(0 0 15px var(--neon-cyan)); } }
+        
+        .sub-bar { font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0,240,255,0.4); margin-bottom: 20px; }
+        
+        /* TIMING AND PRICING CONTAINER */
+        .info-stack { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; font-size: 1.2rem; font-weight: 500; }
+        .info-row { padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .info-stack span { font-weight: bold; }
+        .color-price { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
+        .color-time { color: var(--neon-green); text-shadow: 0 0 10px rgba(57,255,20,0.3); }
+
+        /* PORTFOLIO SHOWCASE SECTION */
+        .matrix-headline { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: #fff; }
+        .matrix-headline::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(0,240,255,0.4), transparent); }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 25px; width: 100%; }
+        
+        .cyber-card {
+            background: #09090e; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px; overflow: hidden; position: relative;
+            aspect-ratio: 16/9; transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+        }
+        .cyber-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.9); transition: 0.5s ease; }
+        
+        /* Thumbnail Hover Glow Effect */
+        .cyber-card:hover {
+            border-color: var(--neon-magenta);
+            box-shadow: 0 15px 45px rgba(255, 0, 127, 0.3);
+            transform: translateY(-5px);
+        }
+        .cyber-card:hover img { filter: brightness(1.1); transform: scale(1.02); }
+        .corner-tag { position: absolute; bottom: 12px; right: 12px; background: rgba(0, 0, 0, 0.85); border: 1px solid var(--neon-cyan); padding: 4px 10px; font-size: 0.7rem; font-family: monospace; color: var(--neon-cyan); letter-spacing: 1px; border-radius: 2px; pointer-events: none; z-index: 3; }
+
+        /* RESPONSIVE DESIGN FOR SMARTPHONES */
+        @media (max-width: 900px) {
+            .kinetic-title { font-size: 2.2rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .info-stack { font-size: 1.1rem; }
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
+            .corner-cta-box { font-size: 0.8rem; width: 100%; text-align: center; }
+            .wrapper { padding: 15px; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LAYER BACKGROUND EFFECTS -->
+    <div class="bg-matrix"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <!-- HEADER BAR -->
+    <header>
+        <div class="logo-hub">⚡ <span>THUMBNAIL</span> Matrix</div>
+        <a href="https://ig.me/m/iambhanu8x" target="_blank" class="corner-cta-box">
+             ORDERS / DETAILS: <span>DM @iambhanu8x</span>
+        </a>
+    </header>
+
+    <!-- CONTENT BOX -->
+    <div class="wrapper">
+
+        <!-- 1. INTRO / PRICING / TIMING AREA -->
+        <div class="hero-block">
+            <!-- RESTORED HEADLINE TEXT SO HERO BOX FEELS BALANCED -->
+            <h1 class="kinetic-title">
+                <span>VIRAL</span> <span>THUMBNAILS</span>
+            </h1>
+            <div class="sub-bar"><h1>Stop The Scroll. Multiply Your Views.</h1></div>
+            
+            <div class="info-stack">
+                <!-- PRICING ROW -->
+                <div class="info-row">
+                    <span>💰 Pricing:</span> <span class="color-price">100 - 150 Rupees Per Thumbnail</span>
+                </div>
+                <!-- TIMING ROW -->
+                <div class="info-row">
+                    <span>⚡ Delivery Time:</span> <span class="color-time">Ready in 1 - 2 Hours Only</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SAMPLES PORTFOLIO SHOWCASE GRID -->
+        <div id="portfolio-matrix">
+            <h2 class="matrix-headline">MY THUMBNAIL SAMPLES</h2>
+            <div class="grid-container">
+                
+                <!-- THUMBNAIL SAMPLE 1 -->
+                <div class="cyber-card">
+                    <!-- SWAP THIS SAMPLE IMAGE LINK FOR YOUR FIRST REAL DESIGN -->
+                    <img src="https://unsplash.com" alt="Thumbnail Design 1">
+                    <div class="corner-tag">SAMPLE // 01</div>
+                </div>
+
+                <!-- THUMBNAIL SAMPLE 2 -->
+                <div class="cyber-card">
+                    <!-- SWAP THIS SAMPLE IMAGE LINK FOR YOUR SECOND REAL DESIGN -->
+                    <img src="https://unsplash.com" alt="Thumbnail Design 2">
+                    <div class="corner-tag">SAMPLE // 02</div>
+                </div>
+
+    
