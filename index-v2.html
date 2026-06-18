@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bhanu | Thumbnail Designer</title>
+
+<meta name="description" content="Affordable YouTube Thumbnail Designer. Professional thumbnails for creators who want more clicks and more attention.">
+
+<meta name="keywords" content="Thumbnail Designer, YouTube Thumbnail Designer, Thumbnail Portfolio, YouTube Graphics">
+
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#050505;
+--card:#0d0d0d;
+
+--cyan:#00e5ff;
+--purple:#7c3aed;
+--pink:#ff007f;
+--green:#39ff14;
+
+--white:#ffffff;
+--text:#b8b8b8;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html{
+overflow-x:hidden;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--bg);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* ========================= */
+/* BACKGROUND */
+/* ========================= */
+
+.bg-grid{
+
+position:fixed;
+
+inset:-50%;
+
+width:200%;
+height:200%;
+
+background-image:
+linear-gradient(rgba(0,229,255,.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,229,255,.04) 1px, transparent 1px);
+
+background-size:60px 60px;
+
+transform:rotate(-12deg);
+
+animation:gridMove 8s linear infinite;
+
+z-index:-5;
+
+}
+
+@keyframes gridMove{
+
+0%{
+background-position:0 0;
+}
+
+100%{
+background-position:60px 60px;
+}
+
+}
+
+.orb{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(140px);
+
+opacity:.18;
+
+pointer-events:none;
+
+z-index:-4;
+
+}
+
+.orb1{
+
+width:550px;
+height:550px;
+
+background:var(--pink);
+
+top:-180px;
+left:-180px;
+
+}
+
+.orb2{
+
+width:550px;
+height:550px;
+
+background:var(--cyan);
+
+right:-180px;
+bottom:-180px;
+
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:22px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+backdrop-filter:blur(18px);
+
+background:rgba(5,5,5,.7);
+
+border-bottom:1px solid rgba(255,255,255,.04);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:1.15rem;
+
+font-weight:900;
+
+letter-spacing:1px;
+
+}
+
+.logo span{
+
+color:var(--cyan);
+
+}
+
+.nav{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.nav a{
+
+color:#d5d5d5;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.nav a:hover{
+
+color:var(--cyan);
+
+}
+
+.order-btn{
+
+padding:12px 22px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+background:linear-gradient(
+135deg,
+var(--pink),
+var(--purple)
+);
+
+color:white;
+
+box-shadow:
+0 0 25px rgba(255,0,127,.3);
+
+transition:.3s;
+
+}
+
+.order-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+
+min-height:100vh;
+
+padding-top:130px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:0 8%;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1.1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.hero-badge{
+
+display:inline-flex;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.03);
+
+color:var(--cyan);
+
+font-weight:700;
+
+margin-bottom:30px;
+
+}
+
+.hero h1{
+
+font-size:clamp(3.2rem,8vw,6.5rem);
+
+line-height:.95;
+
+font-weight:900;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+background:linear-gradient(
+90deg,
+var(--cyan),
+white
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+color:var(--text);
+
+max-width:650px;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+padding:16px 28px;
+
+border-radius:14px;
+
+background:linear-gradient(
+135deg,
+var(--cyan),
+#0099ff
+);
+
+color:black;
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+.secondary-btn{
+
+padding:16px 28px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-decoration:none;
+
+color:white;
+
+}
+
+/* ========================= */
+/* HERO THUMBNAILS */
+/* ========================= */
+
+.hero-thumbs{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+}
+
+.hero-thumb{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#111;
+
+}
+
+.hero-thumb img{
+
+width:100%;
+
+display:block;
+
+transition:.4s;
+
+}
+
+.hero-thumb:hover img{
+
+transform:scale(1.04);
+
+}
+
+.thumb-label{
+
+position:absolute;
+
+bottom:15px;
+
+left:15px;
+
+padding:8px 14px;
+
+background:black;
+
+border:1px solid var(--cyan);
+
+border-radius:999px;
+
+font-size:.8rem;
+
+font-weight:700;
+
+color:var(--cyan);
+
+}
+
+/* ========================= */
+/* TRUST BAR */
+/* ========================= */
+
+.trust-bar{
+
+margin-top:50px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+}
+
+.trust-box{
+
+padding:20px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.06);
+
+text-align:center;
+
+}
+
+.trust-box strong{
+
+display:block;
+
+font-size:1.1rem;
+
+margin-bottom:6px;
+
+color:var(--cyan);
+
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:1000px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero p{
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.trust-bar{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:700px){
+
+header{
+
+padding:18px;
+
+}
+
+.nav{
+
+display:none;
+
+}
+
+.hero-thumbs{
+
+grid-template-columns:1fr;
+
+}
+
+.trust-bar{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<header>
+
+<div class="logo">
+
+BHANU<span>.</span>
+
+</div>
+
+<div class="nav">
+
+<a href="#portfolio">Portfolio</a>
+
+<a href="#pricing">Pricing</a>
+
+<a href="#contact">Contact</a>
+
+<a href="https://ig.me/m/iambhanu8x"
+class="order-btn"
+target="_blank">
+
+DM @iambhanu8x
+
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="hero-badge">
+
+⚡ Thumbnail Designer
+
+</div>
+
+<h1>
+
+Stop The Scroll.
+<span>Get The Click.</span>
+
+</h1>
+
+<p>
+
+I create YouTube thumbnails designed
+to grab attention instantly.
+
+Affordable pricing.
+Fast delivery.
+Direct communication.
+
+Built for creators who want more clicks.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#portfolio"
+class="primary-btn">
+
+View Portfolio
+
+</a>
+
+<a href="https://ig.me/m/iambhanu8x"
+target="_blank"
+class="secondary-btn">
+
+Order A Thumbnail
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-thumbs">
+
+<div class="hero-thumb">
+
+<img src="PUT_RONALDO_IMAGE_URL_HERE">
+
+<div class="thumb-label">
+
+RONALDO
+
+</div>
+
+</div>
+
+<div class="hero-thumb">
+
+<img src="PUT_VIRAT_IMAGE_URL_HERE">
+
+<div class="thumb-label">
+
+VIRAT KOHLI
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="trust-bar">
+
+<div class="trust-box">
+<strong>₹100–150</strong>
+Affordable Pricing
+</div>
+
+<div class="trust-box">
+<strong>24 Hours</strong>
+Delivery Time
+</div>
+
+<div class="trust-box">
+<strong>Free Trial</strong>
+First Thumbnail
+</div>
+
+<div class="trust-box">
+<strong>Direct DM</strong>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ====================================== -->
+<!-- PORTFOLIO SECTION -->
+<!-- ====================================== -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="section-badge">
+MY WORK
+</span>
+
+<h2>
+Thumbnail Portfolio
+</h2>
+
+<p>
+A collection of thumbnails designed to stop scrolling,
+increase curiosity and improve click-through rate.
+</p>
+
+</div>
+
+<div class="portfolio-grid">
+
+<!-- RONALDO -->
+
+<div class="portfolio-card featured">
+
+<img src="PUT_RONALDO_IMAGE_URL_HERE">
+
+<div class="portfolio-info">
+
+<h3>
+Ronaldo Transformation
+</h3>
+
+<span>
+Storytelling Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<!-- VIRAT -->
+
+<div class="portfolio-card featured">
+
+<img src="PUT_VIRAT_IMAGE_URL_HERE">
+
+<div class="portfolio-info">
+
+<h3>
+Virat Kohli GOAT
+</h3>
+
+<span>
+Cricket Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<!-- PABLO -->
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/pjGFb32T/fdf59d79366f8e53b93ba7f7677cd0ce.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+Pablo Escobar
+</h3>
+
+<span>
+Documentary Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<!-- SELF DOUBT -->
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/4wrTQD8Y/aecc25cc749c34c19442b03db5a3b9c2.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+Self Doubt
+</h3>
+
+<span>
+Self Improvement
+</span>
+
+</div>
+
+</div>
+
+<!-- SOCIAL MEDIA -->
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/G480XRcr/8cf2d8c017243f5c040f51da91b92022.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+Social Media
+</h3>
+
+<span>
+Psychology Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<!-- SHORT VIDEO EDITOR -->
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/LdFF8SHr/14569e87ec61f94f8d123ae45fb33231.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+Short Video Editor
+</h3>
+
+<span>
+Creator Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<!-- REMAINING -->
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/20tTgggB/38977b573fea846fccfb661cb42c4b49.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+Finance Content
+</h3>
+
+<span>
+Business Thumbnail
+</span>
+
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="https://i.ibb.co/VYMZqr5Q/e21a7e0d0341da88b236c43e950b37ac.jpg">
+
+<div class="portfolio-info">
+
+<h3>
+LinkedIn Growth
+</h3>
+
+<span>
+Professional Content
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- WHY WORK WITH ME -->
+<!-- ====================================== -->
+
+<section class="why-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="section-badge">
+WHY CHOOSE ME
+</span>
+
+<h2>
+Simple. Fast. Affordable.
+</h2>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<div class="why-icon">
+⚡
+</div>
+
+<h3>
+Fast Delivery
+</h3>
+
+<p>
+Most thumbnails are delivered within 24 hours.
+Perfect for active creators.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+🎯
+</div>
+
+<h3>
+Built For Clicks
+</h3>
+
+<p>
+Designed with curiosity, contrast and readability
+in mind.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+💰
+</div>
+
+<h3>
+Affordable
+</h3>
+
+<p>
+Professional-looking thumbnails without premium
+agency pricing.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+🤝
+</div>
+
+<h3>
+Direct Communication
+</h3>
+
+<p>
+You work directly with me.
+No middleman.
+No confusion.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- PRICING -->
+<!-- ====================================== -->
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="section-badge">
+PRICING
+</span>
+
+<h2>
+Affordable Plans
+</h2>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>
+₹100
+</h3>
+
+<p>
+Standard Thumbnail
+</p>
+
+<ul>
+
+<li>Custom Design</li>
+
+<li>High Resolution</li>
+
+<li>Fast Delivery</li>
+
+<li>Creator Focused</li>
+
+</ul>
+
+</div>
+
+<div class="price-card featured-price">
+
+<div class="popular-tag">
+POPULAR
+</div>
+
+<h3>
+₹150
+</h3>
+
+<p>
+Premium Thumbnail
+</p>
+
+<ul>
+
+<li>Advanced Effects</li>
+
+<li>Better Visual Hierarchy</li>
+
+<li>Premium Styling</li>
+
+<li>Priority Delivery</li>
+
+<li>Revision Included</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ====================== */
+/* SECTION TITLES */
+/* ====================== */
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+font-size:3rem;
+
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+color:#bcbcbc;
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.8;
+
+}
+
+.section-badge{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.03);
+
+color:var(--cyan);
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+/* ====================== */
+/* PORTFOLIO */
+/* ====================== */
+
+.portfolio-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:30px;
+
+}
+
+.portfolio-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#111;
+
+cursor:pointer;
+
+}
+
+.portfolio-card img{
+
+width:100%;
+
+transition:.5s;
+
+}
+
+.portfolio-card:hover img{
+
+transform:scale(1.05);
+
+}
+
+.portfolio-info{
+
+padding:20px;
+
+}
+
+.portfolio-info h3{
+
+margin-bottom:8px;
+
+}
+
+.portfolio-info span{
+
+color:var(--cyan);
+
+font-size:.9rem;
+
+}
+
+.featured{
+
+border:1px solid rgba(0,229,255,.35);
+
+}
+
+/* ====================== */
+/* WHY SECTION */
+/* ====================== */
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.why-card{
+
+padding:35px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--cyan);
+
+}
+
+.why-icon{
+
+font-size:2rem;
+
+margin-bottom:15px;
+
+}
+
+/* ====================== */
+/* PRICING */
+/* ====================== */
+
+.pricing-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.price-card{
+
+padding:40px;
+
+background:rgba(255,255,255,.03);
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+}
+
+.price-card h3{
+
+font-size:3rem;
+
+margin-bottom:15px;
+
+}
+
+.price-card ul{
+
+margin-top:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+list-style:none;
+
+}
+
+.featured-price{
+
+border-color:var(--cyan);
+
+box-shadow:0 0 40px rgba(0,229,255,.12);
+
+}
+
+.popular-tag{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+padding:6px 12px;
+
+background:var(--cyan);
+
+color:black;
+
+font-weight:800;
+
+border-radius:999px;
+
+font-size:.75rem;
+
+}
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media(max-width:900px){
+
+.pricing-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title h2{
+
+font-size:2.2rem;
+
+}
+
+}
+
+</style>
+<!-- ====================================== -->
+<!-- WORK PROCESS -->
+<!-- ====================================== -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="section-badge">
+PROCESS
+</span>
+
+<h2>
+How It Works
+</h2>
+
+<p>
+Simple process. No forms. No complicated onboarding.
+Just send a DM and let's get started.
+</p>
+
+</div>
+
+<div class="process-grid">
+
+<div class="process-card">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Send Details
+</h3>
+
+<p>
+Send your video title, idea or script through Instagram.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Thumbnail Creation
+</h3>
+
+<p>
+I create a custom thumbnail designed to maximize attention.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Delivery
+</h3>
+
+<p>
+Receive your thumbnail and start publishing.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- FAQ -->
+<!-- ====================================== -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="section-badge">
+FAQ
+</span>
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+</div>
+
+<div class="faq-grid">
+
+<div class="faq-card">
+
+<h3>
+How long does delivery take?
+</h3>
+
+<p>
+Usually within 24 hours.
+Sometimes much faster.
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+Do you offer a free trial?
+</h3>
+
+<p>
+Yes. One trial thumbnail can be created before paid work.
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+What niches do you work in?
+</h3>
+
+<p>
+Gaming, Cricket, Finance, Self Improvement, Storytelling and Creator Content.
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+How do I order?
+</h3>
+
+<p>
+Simply DM @iambhanu8x on Instagram.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- FINAL CTA -->
+<!-- ====================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="final-cta">
+
+<h2>
+Need A Thumbnail?
+</h2>
+
+<p>
+Let's create something people can't ignore.
+</p>
+
+<a href="https://ig.me/m/iambhanu8x"
+target="_blank"
+class="cta-button">
+
+DM @iambhanu8x
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- CONTACT -->
+<!-- ====================================== -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-card">
+
+<h2>
+Let's Work Together
+</h2>
+
+<p>
+Fastest response on Instagram.
+Feel free to send your idea anytime.
+</p>
+
+<a href="https://ig.me/m/iambhanu8x"
+target="_blank"
+class="big-contact-btn">
+
+Message Me On Instagram
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- FOOTER -->
+<!-- ====================================== -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+BHANU
+</h3>
+
+<p>
+Thumbnail Designer
+</p>
+
+<div class="footer-line"></div>
+
+<span>
+Built with ❤️ by Bhanu
+</span>
+
+</div>
+
+</footer>
+
+<!-- ====================================== -->
+<!-- FLOATING BUTTON -->
+<!-- ====================================== -->
+
+<a href="https://ig.me/m/iambhanu8x"
+target="_blank"
+class="floating-order">
+
+⚡ Order Now
+
+</a>
+
+<style>
+
+/* ====================== */
+/* PROCESS */
+/* ====================== */
+
+.process-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+.process-card{
+
+padding:35px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+}
+
+.step-number{
+
+font-size:3rem;
+
+font-weight:900;
+
+color:var(--cyan);
+
+margin-bottom:15px;
+
+}
+
+/* ====================== */
+/* FAQ */
+/* ====================== */
+
+.faq-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.faq-card{
+
+padding:30px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.faq-card h3{
+
+margin-bottom:15px;
+
+}
+
+.faq-card p{
+
+color:#bcbcbc;
+
+line-height:1.8;
+
+}
+
+/* ====================== */
+/* FINAL CTA */
+/* ====================== */
+
+.final-cta{
+
+padding:80px 40px;
+
+border-radius:30px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,229,255,.1),
+rgba(255,0,127,.1)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.final-cta h2{
+
+font-size:4rem;
+
+margin-bottom:15px;
+
+}
+
+.final-cta p{
+
+font-size:1.1rem;
+
+margin-bottom:35px;
+
+color:#bcbcbc;
+
+}
+
+.cta-button{
+
+display:inline-block;
+
+padding:18px 32px;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+135deg,
+var(--pink),
+var(--purple)
+);
+
+color:white;
+
+font-weight:800;
+
+text-decoration:none;
+
+box-shadow:
+0 0 35px rgba(255,0,127,.35);
+
+transition:.3s;
+
+}
+
+.cta-button:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* ====================== */
+/* CONTACT */
+/* ====================== */
+
+.contact-card{
+
+padding:80px 40px;
+
+text-align:center;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-card h2{
+
+font-size:3rem;
+
+margin-bottom:15px;
+
+}
+
+.contact-card p{
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:30px;
+
+color:#bcbcbc;
+
+}
+
+.big-contact-btn{
+
+display:inline-block;
+
+padding:20px 35px;
+
+border-radius:14px;
+
+background:
+linear-gradient(
+135deg,
+var(--cyan),
+#0099ff
+);
+
+color:black;
+
+font-weight:900;
+
+text-decoration:none;
+
+}
+
+/* ====================== */
+/* FOOTER */
+/* ====================== */
+
+footer{
+
+padding:80px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.05);
+
+}
+
+.footer-content h3{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.footer-content p{
+
+color:#bcbcbc;
+
+margin-bottom:20px;
+
+}
+
+.footer-line{
+
+width:120px;
+
+height:2px;
+
+background:var(--cyan);
+
+margin:auto;
+
+margin-bottom:20px;
+
+}
+
+/* ====================== */
+/* FLOATING BUTTON */
+/* ====================== */
+
+.floating-order{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+padding:16px 24px;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+135deg,
+var(--pink),
+var(--purple)
+);
+
+color:white;
+
+font-weight:800;
+
+text-decoration:none;
+
+z-index:9999;
+
+box-shadow:
+0 0 30px rgba(255,0,127,.35);
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+}
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media(max-width:900px){
+
+.process-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.faq-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.final-cta h2{
+
+font-size:2.5rem;
+
+}
+
+.contact-card h2{
+
+font-size:2.3rem;
+
+}
+
+}
+
+</style>
